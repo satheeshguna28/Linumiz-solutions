@@ -1,0 +1,6 @@
+Implement ps command. At-least to show Pid and name of the process.
+
+sago@SATHEESHKUMAR:~$ ps
+    PID TTY          TIME CMD
+   2606 pts/0    00:00:00 bash
+   2654 pts/0    00:00:00 ps
