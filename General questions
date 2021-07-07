@@ -1,14 +1,25 @@
 1. Write a brief summary about I2C protocol.
-
+  
+  ● I2C combines the best features of SPI and UARTs. With I2C, you can connect multiple slaves to a single master (like SPI) and you can have multiple masters controlling single, or multiple slaves.
+  ● Like UART communication, I2C only uses two wires to transmit data between devices:
+      •SDA (Serial Data) – The line for the master and slave to send and receive data.
+      •SCL (Serial Clock) – The line that carries the clock signal.
+  ● I2C is a serial communication protocol, so data is transferred bit by bit along a single wire (the SDA line).
+  ● Like SPI, I2C is synchronous, so the output of bits is synchronized to the sampling of bits by a clock signal shared between the master and the slave. The clock signal is always controlled by the master.
+  
 2. Write short text about, pull up resistor, pull down resistor, open drain, active low, active high.
 
-Pull up/down resisters:
+◆ Pull up/down resisters:
   ● These are the resisters that are used in digital circuits, to pull the voltage level in digital inputs, equivalent to the level of VCC(pull up) or to thr ground(pull down).
   ● These resister's value can be calculated depending on which logic family that the digital circuit belongs to. 
   ● Also these resisters plays important role in communication protocols like I2C,etc.
-
-Active low - the required functions gets done when input is in low state
-Active high -the required functions gets done when input is in high state
+  
+◆ Open drain:
+  ● An open drain is a common type of output found on many integrated circuits (IC), which behaves like a switch that is either connected to ground or disconnected. 
+  ● In order to achieve a logical high output on the line, a pull-up resistor is used to connect the open-drain output to the desired output voltage level.
+  
+◆ Active low - the required functions gets done when input is in low state
+◆ Active high -the required functions gets done when input is in high state
 
 3. Short text about Linux booting process and the role of Kernel.
 
