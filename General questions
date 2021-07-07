@@ -7,8 +7,8 @@ Pull up/down resisters:
   ● These resister's value can be calculated depending on which logic family that the digital circuit belongs to. 
   ● Also these resisters plays important role in communication protocols like I2C,etc.
 
-
-
+Active low - the required functions gets done when input is in low state
+Active high -the required functions gets done when input is in high state
 
 3. Short text about Linux booting process and the role of Kernel.
 
