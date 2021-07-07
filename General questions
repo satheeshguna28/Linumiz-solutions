@@ -3,7 +3,7 @@
 2. Write short text about, pull up resistor, pull down resistor, open drain, active low, active high.
 
 Pull up/down resisters:
-  ● These are the resisters that are used in digital circuits, to pull the voltage level in digital inputs, equivalent to the level of VCC(pull up) or to thr ground(pull down)
+  ● These are the resisters that are used in digital circuits, to pull the voltage level in digital inputs, equivalent to the level of VCC(pull up) or to thr ground(pull down).
   ● These resister's value can be calculated depending on which logic family that the digital circuit belongs to. 
 
 
