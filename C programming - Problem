@@ -1,2 +1,215 @@
 // Implement ps command. At-least to show Pid and name of the process.
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    printf("Showing the processes for the current shell:\n");
+    system("ps");
+    printf("Showing all the running processes:\n");
+    system("ps -e");
+    return 0;
+}
+
+//OUTPUT:
+
+sago@SATHEESHKUMAR:~$ cd Desktop/
+sago@SATHEESHKUMAR:~/Desktop$ touch ps_command.c
+sago@SATHEESHKUMAR:~/Desktop$ gcc  ps_command.c -o run
+sago@SATHEESHKUMAR:~/Desktop$ ./run
+Showing the processes for the current shell:
+    PID TTY          TIME CMD
+   1962 pts/0    00:00:00 bash
+   2115 pts/0    00:00:00 run
+   2116 pts/0    00:00:00 sh
+   2117 pts/0    00:00:00 ps
+Showing all the running processes:
+    PID TTY          TIME CMD
+      1 ?        00:00:11 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 rcu_gp
+      4 ?        00:00:00 rcu_par_gp
+      5 ?        00:00:03 kworker/0:0-events
+      6 ?        00:00:00 kworker/0:0H-kblockd
+      7 ?        00:00:02 kworker/u4:0-events_unbound
+      8 ?        00:00:00 mm_percpu_wq
+      9 ?        00:00:00 ksoftirqd/0
+     10 ?        00:00:11 rcu_sched
+     11 ?        00:00:00 migration/0
+     12 ?        00:00:00 idle_inject/0
+     14 ?        00:00:00 cpuhp/0
+     15 ?        00:00:00 cpuhp/1
+     16 ?        00:00:00 idle_inject/1
+     17 ?        00:00:00 migration/1
+     18 ?        00:00:02 ksoftirqd/1
+     20 ?        00:00:00 kworker/1:0H-kblockd
+     21 ?        00:00:00 kdevtmpfs
+     22 ?        00:00:00 netns
+     23 ?        00:00:00 rcu_tasks_kthre
+     24 ?        00:00:00 rcu_tasks_rude_
+     25 ?        00:00:00 rcu_tasks_trace
+     26 ?        00:00:00 kauditd
+     27 ?        00:00:00 khungtaskd
+     28 ?        00:00:00 oom_reaper
+     29 ?        00:00:00 writeback
+     30 ?        00:00:00 kcompactd0
+     31 ?        00:00:00 ksmd
+     32 ?        00:00:00 khugepaged
+     78 ?        00:00:00 kintegrityd
+     79 ?        00:00:00 kblockd
+     80 ?        00:00:00 blkcg_punt_bio
+     81 ?        00:00:00 tpm_dev_wq
+     82 ?        00:00:00 ata_sff
+     83 ?        00:00:00 md
+     84 ?        00:00:00 edac-poller
+     85 ?        00:00:00 devfreq_wq
+     86 ?        00:00:00 watchdogd
+     89 ?        00:00:00 pm_wq
+     91 ?        00:00:00 kswapd0
+     92 ?        00:00:00 ecryptfs-kthrea
+     94 ?        00:00:00 kthrotld
+     95 ?        00:00:00 acpi_thermal_pm
+     96 ?        00:00:00 scsi_eh_0
+     97 ?        00:00:00 scsi_tmf_0
+     98 ?        00:00:00 scsi_eh_1
+     99 ?        00:00:00 scsi_tmf_1
+    101 ?        00:00:00 vfio-irqfd-clea
+    102 ?        00:00:00 ipv6_addrconf
+    112 ?        00:00:00 kstrp
+    115 ?        00:00:00 zswap-shrink
+    116 ?        00:00:00 kworker/u5:0
+    121 ?        00:00:00 charger_manager
+    159 ?        00:00:01 kworker/0:3-events
+    160 ?        00:00:00 scsi_eh_2
+    161 ?        00:00:00 scsi_tmf_2
+    163 ?        00:00:03 kworker/0:1H-kblockd
+    165 ?        00:00:01 kworker/1:2-events
+    183 ?        00:00:03 kworker/1:1H-kblockd
+    185 ?        00:00:00 jbd2/sda5-8
+    186 ?        00:00:00 ext4-rsv-conver
+    224 ?        00:00:04 systemd-journal
+    254 ?        00:00:00 loop0
+    256 ?        00:00:00 loop1
+    258 ?        00:00:00 loop2
+    260 ?        00:00:00 loop3
+    261 ?        00:00:00 loop4
+    262 ?        00:00:00 loop5
+    265 ?        00:00:00 loop6
+    266 ?        00:00:00 loop7
+    269 ?        00:00:02 systemd-udevd
+    270 ?        00:00:00 loop8
+    271 ?        00:00:00 loop9
+    289 ?        00:00:00 iprt-VBoxWQueue
+    314 ?        00:00:01 irq/18-vmwgfx
+    315 ?        00:00:00 ttm_swap
+    482 ?        00:00:00 systemd-resolve
+    483 ?        00:00:00 systemd-timesyn
+    515 ?        00:00:01 accounts-daemon
+    516 ?        00:00:00 acpid
+    518 ?        00:00:00 avahi-daemon
+    519 ?        00:00:00 cron
+    520 ?        00:00:00 cupsd
+    521 ?        00:00:05 dbus-daemon
+    522 ?        00:00:03 NetworkManager
+    529 ?        00:00:00 irqbalance
+    530 ?        00:00:01 networkd-dispat
+    531 ?        00:00:06 polkitd
+    533 ?        00:00:01 rsyslogd
+    535 ?        00:00:08 snapd
+    536 ?        00:00:00 switcheroo-cont
+    537 ?        00:00:01 systemd-logind
+    554 ?        00:00:00 udisksd
+    556 ?        00:00:00 wpa_supplicant
+    557 ?        00:00:00 avahi-daemon
+    649 ?        00:00:00 cups-browsed
+    653 ?        00:00:00 ModemManager
+    663 ?        00:00:01 unattended-upgr
+    704 ?        00:00:00 whoopsie
+    708 ?        00:00:00 kerneloops
+    712 ?        00:00:00 kerneloops
+    849 ?        00:00:00 gdm3
+    853 ?        00:00:01 VBoxService
+    884 ?        00:00:00 rtkit-daemon
+    983 ?        00:00:00 upowerd
+   1215 ?        00:00:00 colord
+   1247 ?        00:00:00 kworker/1:0-cgroup_destroy
+   1259 ?        00:00:00 gdm-session-wor
+   1273 ?        00:00:02 systemd
+   1274 ?        00:00:00 (sd-pam)
+   1279 ?        00:00:02 pulseaudio
+   1281 ?        00:00:01 tracker-miner-f
+   1284 ?        00:00:02 dbus-daemon
+   1289 ?        00:00:00 gnome-keyring-d
+   1304 ?        00:00:00 gvfsd
+   1309 ?        00:00:00 gvfsd-fuse
+   1310 ?        00:00:00 gvfs-udisks2-vo
+   1320 tty2     00:00:00 gdm-x-session
+   1324 tty2     00:00:42 Xorg
+   1327 ?        00:00:00 gvfs-gphoto2-vo
+   1332 ?        00:00:00 gvfs-mtp-volume
+   1337 ?        00:00:00 gvfs-goa-volume
+   1341 ?        00:00:00 goa-daemon
+   1348 ?        00:00:00 goa-identity-se
+   1354 ?        00:00:00 gvfs-afc-volume
+   1381 tty2     00:00:00 gnome-session-b
+   1454 ?        00:00:00 VBoxClient
+   1456 ?        00:00:00 VBoxClient
+   1467 ?        00:00:00 VBoxClient
+   1468 ?        00:00:00 VBoxClient
+   1472 ?        00:00:00 VBoxClient
+   1473 ?        00:00:12 VBoxClient
+   1478 ?        00:00:00 VBoxClient
+   1479 ?        00:00:00 VBoxClient
+   1490 ?        00:00:00 ssh-agent
+   1517 ?        00:00:00 at-spi-bus-laun
+   1522 ?        00:00:00 dbus-daemon
+   1545 ?        00:00:00 gnome-session-c
+   1552 ?        00:00:00 gnome-session-b
+   1567 ?        00:01:20 gnome-shell
+   1602 ?        00:00:00 ibus-daemon
+   1606 ?        00:00:00 ibus-dconf
+   1607 ?        00:00:05 ibus-extension-
+   1609 ?        00:00:01 ibus-x11
+   1611 ?        00:00:00 ibus-portal
+   1622 ?        00:00:00 at-spi2-registr
+   1628 ?        00:00:00 xdg-permission-
+   1632 ?        00:00:00 gnome-shell-cal
+   1639 ?        00:00:00 evolution-sourc
+   1648 ?        00:00:00 evolution-calen
+   1662 ?        00:00:00 dconf-service
+   1668 ?        00:00:00 evolution-addre
+   1682 ?        00:00:00 gjs
+   1711 ?        00:00:00 gsd-a11y-settin
+   1713 ?        00:00:01 gsd-color
+   1714 ?        00:00:00 gsd-datetime
+   1717 ?        00:00:00 gsd-housekeepin
+   1719 ?        00:00:01 gsd-keyboard
+   1722 ?        00:00:00 gvfsd-trash
+   1723 ?        00:00:01 gsd-media-keys
+   1727 ?        00:00:01 gsd-power
+   1732 ?        00:00:00 gsd-print-notif
+   1738 ?        00:00:00 gsd-rfkill
+   1742 ?        00:00:00 gsd-screensaver
+   1745 ?        00:00:00 gsd-sharing
+   1750 ?        00:00:00 gsd-smartcard
+   1753 ?        00:00:00 gsd-sound
+   1756 ?        00:00:00 gsd-usb-protect
+   1760 ?        00:00:01 gsd-wacom
+   1764 ?        00:00:00 gsd-wwan
+   1767 ?        00:00:01 gsd-xsettings
+   1776 ?        00:00:00 gsd-disk-utilit
+   1779 ?        00:00:00 gsd-printer
+   1793 ?        00:00:01 evolution-alarm
+   1794 ?        00:00:00 ibus-engine-sim
+   1938 ?        00:00:00 gvfsd-metadata
+   1952 ?        00:00:03 gnome-terminal-
+   1962 pts/0    00:00:00 bash
+   1969 ?        00:00:15 gedit
+   1978 ?        00:00:00 update-notifier
+   2037 ?        00:00:00 kworker/u4:1-events_unbound
+   2073 ?        00:00:00 kworker/u4:2-events_unbound
+   2083 ?        00:00:00 tracker-store
+   2115 pts/0    00:00:00 run
+   2118 pts/0    00:00:00 sh
+   2119 pts/0    00:00:00 ps
