@@ -22,7 +22,13 @@
 ◆ Active high -the required functions gets done when input is in high state
 
 3. Short text about Linux booting process and the role of Kernel.
-
+◆ The following are the 6 high level stages of a typical linux boot process.
+   BIOS-->MBR-->GRUB-->Kernel-->Init-->Runlevel
+◆ Kernel:
+   ● The kernel is often referred to as the core of any operating system, Linux included. It has complete control over everything in your system.
+   ● In this stage of the boot process, the kernel that was selected by GRUB first mounts the root file system that's specified in the grub.conf file. Then it executes the /sbin/init program, which is always the first program to be executed. You can confirm this with its process id (PID), which should always be 1.
+   ● The kernel then establishes a temporary root file system using Initial RAM Disk (initrd) until the real file system is mounted.
+   
 4. Text about first impression on Zephyr RTOS.
    ● The Zephyr Project is a scalable real-time operating system (RTOS) supporting multiple hardware architectures, optimized for resource constrained devices, and built with security in mind.
    ● The Zephyr OS is based on a small-footprint kernel designed for use on resource-constrained systems: from simple embedded environmental sensors and LED wearables to sophisticated smart watches and IoT wireless gateways.
