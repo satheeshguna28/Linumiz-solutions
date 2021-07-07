@@ -24,3 +24,6 @@
 3. Short text about Linux booting process and the role of Kernel.
 
 4. Text about first impression on Zephyr RTOS.
+   ● The Zephyr Project is a scalable real-time operating system (RTOS) supporting multiple hardware architectures, optimized for resource constrained devices, and built with security in mind.
+   ● The Zephyr OS is based on a small-footprint kernel designed for use on resource-constrained systems: from simple embedded environmental sensors and LED wearables to sophisticated smart watches and IoT wireless gateways.
+   ● The Zephyr kernel supports multiple architectures, including ARM Cortex-M, Intel x86, ARC, Nios II, Tensilica Xtensa, and RISC-V, and a large number of supported boards.
