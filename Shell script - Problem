@@ -1,6 +1,97 @@
 Create a chat client in shell i.e 2 shell script running in 2 terminals and communicating over pipe.
 
-Hi brother,
-  I have learned the basic shell scripting commands and practiced all of that. 
-  I learned how actually pipe works.
-  But I cannot complete this problem by now using shell script.
+//code for writing end terminal
+
+#!/bin/bash
+
+pipe=/tmp/testpipe
+
+if [[ ! -p $pipe ]]; then
+    echo "Reader not available :("
+    exit 1
+fi
+
+
+if [[ "$1" ]]; then
+    echo "$1" >$pipe
+else
+    echo "Reader available :)"
+    echo "Type a message to send or Type 'end' to quit:"
+    read line
+    echo "$line" >$pipe
+    echo "Message sent"
+fi
+
+
+//code for reading end terminal
+
+#!/bin/bash
+
+pipe=/tmp/testpipe
+
+trap "rm -f $pipe" EXIT
+
+if [[ ! -p $pipe ]]; then
+    mkfifo $pipe
+fi
+
+while true
+do
+    if read line <$pipe; then
+        if [[ "$line" == 'end' ]]; then
+            echo "Thanks for messaging :)"
+            break
+        fi
+        echo "Message received"
+        echo "Received message : $line"
+    fi
+done
+
+OUTPUT:
+Step 1: running the write end script in one terminal
+
+In terminal 1:
+
+sago@SATHEESHKUMAR:~/Desktop$ ./Write.sh
+Reader not available :(
+
+Step 2: running the read end script ANOTHER terminal
+
+In terminal 2:
+
+sago@SATHEESHKUMAR:~/Desktop$ ./Read.sh
+
+Step 3: sending a message over the named pipe 
+
+In terminal 1:
+
+sago@SATHEESHKUMAR:~/Desktop$ ./Write.sh
+Reader available :)
+Type a message to send or Type 'end' to quit:
+Hello SATHEESHKUMAR
+Message sent
+
+Step 4: viewing the received message in the other terminal
+
+In terminal 2:
+
+sago@SATHEESHKUMAR:~/Desktop$ ./Read.sh
+Message received
+Received message : Hello SATHEESHKUMAR
+
+Step 5: ending of the process 
+
+In terminal 1:
+
+sago@SATHEESHKUMAR:~/Desktop$ ./Write.sh
+Reader available :)
+Type a message to send or Type 'end' to quit:
+end
+Message sent
+
+In terminal 2:
+
+Thanks for messaging :)
+
+
+
